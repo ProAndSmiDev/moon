@@ -2,6 +2,10 @@
 @import ./mixins
 @import ./animations
 
+@include font-family('Bebas', 'BebasNeue', 'BebasNeueRegular', 400)
+@include font-family('Bebas', 'BebasNeue', 'BebasNeueBold', 700)
+@include font-family('Bebas', 'BebasNeue', 'BebasNeueLight', 300)
+
 *,
 *:after,
 *:before
@@ -21,7 +25,10 @@ body
 
 .wrapper
   display: flex
-  width: $wrapper
+  @include media($width: phone)
+    width: 100%
+  @include media($width: desktop)
+    width: $wrapper
   align-items: center
   flex-flow: row wrap
   justify-content: center
@@ -68,3 +75,5 @@ input, textarea, select, button
 .title
   @include indents($mb: 20px)
   @include font-styles($size: $default-title-size, $color: $default-title-color)
+
+@import ./components/header
