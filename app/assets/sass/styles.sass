@@ -5,6 +5,10 @@
 @include font-family('Bebas', 'BebasNeue', 'BebasNeueRegular', 400)
 @include font-family('Bebas', 'BebasNeue', 'BebasNeueBold', 700)
 @include font-family('Bebas', 'BebasNeue', 'BebasNeueLight', 300)
+@include font-family('Open Sans', 'OpenSans', 'OpenSansLight', 300)
+@include font-family('Open Sans', 'OpenSans', 'OpenSansRegular', 400)
+@include font-family('Open Sans', 'OpenSans', 'OpenSansBold', 700)
+
 
 *,
 *:after,
@@ -14,12 +18,13 @@
   box-sizing: border-box
 
 body
-  background-color: $default-bg
   margin: 0
+  background-color: $default-bg
+  position: relative
   @include media($width: phone)
     padding: 0
   @include media($width: pc)
-    padding: 0 0 20px
+    padding: 0 0 85px
   min-height: 100vh
   @include font-styles($default-size, $default-color, $default-weight, $default-lh, $default-family)
 
@@ -73,7 +78,12 @@ input, textarea, select, button
   clip: rect(0 0 0 0)
 
 .title
+  line-height: $default-title-lh
   @include indents($mb: 20px)
   @include font-styles($size: $default-title-size, $color: $default-title-color)
 
 @import ./components/header
+
+@import ./components/content/main-block
+
+@import ./components/footer
