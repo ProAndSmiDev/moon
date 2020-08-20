@@ -15,25 +15,33 @@
         opacity: 1
 
         .nav__close-btn
-          right: 215px
-          bottom: 15px
+          width: 20px
+          height: 20px
+          right: 210px
+          bottom: 10px
           position: absolute
 
           &:before,
           &:after
+            top: 0
+            left: 0
             content: ''
             width: 20px
             height: 3px
             display: block
             margin:
+              top: 8px
               left: auto
+            position: absolute
             background-color: #fff
-            transition: transform .4s ease-in-out
+            transition: background-color .4s ease-in-out
+          &:hover
+            &:before,
+            &:after
+              background-color: #060b16
           &:before
             transform: rotate(-45deg)
           &:after
-            margin-top: -3px
-            position: absolute
             transform: rotate(45deg)
     &__bg
       top: 0
