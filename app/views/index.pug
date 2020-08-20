@@ -1,0 +1,18 @@
+extends ../templates/default/_template
+
+block SEO
+    +meta('keywords', '')
+    +meta('description', '')
+    title Title for main page
+
+block header
+    .wrapper
+        include ../components/header/logo
+        include ../components/header/menu
+
+block content
+    include ../components/content/main-block
+
+block footer
+    .wrapper
+        include ../components/footer/copyright

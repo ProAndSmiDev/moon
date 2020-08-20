@@ -1,0 +1,70 @@
+@import ./variables
+@import ./mixins
+@import ./animations
+
+*,
+*:after,
+*:before
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  background-color: $default-bg
+  margin: 0
+  @include media($width: phone)
+    padding: 0
+  @include media($width: pc)
+    padding: 0 0 20px
+  min-height: 100vh
+  @include font-styles($default-size, $default-color, $default-weight, $default-lh, $default-family)
+
+.wrapper
+  display: flex
+  width: $wrapper
+  align-items: center
+  flex-flow: row wrap
+  justify-content: center
+  @include indents($mt: 0, $mb: 0, $mr: auto, $ml: auto, $pr: 15px, $pl: 15px)
+
+img
+  height: auto
+  max-width: 100%
+
+a
+  position: relative
+  @include font-styles($color: $default-link)
+
+  &:hover
+    text-decoration: none
+
+ul, ol
+  display: flex
+  list-style: none
+  align-items: center
+  flex-flow: row nowrap
+  justify-content: center
+  @include indents($pl: 0)
+
+button
+  border: 0
+  cursor: pointer
+  background:
+    color: $bg-default-button
+
+input, textarea, select, button
+  font: inherit
+
+.sr-only
+  border: 0
+  width: 1px
+  padding: 0
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  position: absolute
+  clip: rect(0 0 0 0)
+
+.title
+  @include indents($mb: 20px)
+  @include font-styles($size: $default-title-size, $color: $default-title-color)
